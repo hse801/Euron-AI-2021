@@ -2,9 +2,9 @@
 #### 🚩 Euron AI team 황시은 3주차 예습
 # Loss Functions and Optimization  
 
-✅ TODO
- ✔ Define a **loss function** that quantifies our unhappiness with the scores across the training data
- ✔ Come up with a way of efficiently find the parameters that minimize the loss function(**optimization**)
+✅ TODO  
+ ✔ Define a **loss function** that quantifies our unhappiness with the scores across the training data  
+ ✔ Come up with a way of efficiently find the parameters that minimize the loss function(**optimization**)  
 
 W가 좋은지 안 좋은지 정량화 해주는 것이 바로 **Loss function** 이다. 그리고 이를 좋은 쪽으로 발전시키는 것을 **Optimization**이라 한다. 
 ![image](https://user-images.githubusercontent.com/61612117/113465966-ed19b680-9472-11eb-863b-7f5a18e3fac1.png)
@@ -34,14 +34,14 @@ W가 좋은지 안 좋은지 정량화 해주는 것이 바로 **Loss function**
 👉 아니다! W의 loss가 0이라면 2W 역시 0의 loss를 갖는다.  
 
 **Regularization**  
-![image](https://user-images.githubusercontent.com/61612117/113466957-d8d9b780-947a-11eb-86ae-4067278d2813.png)
+![image](https://user-images.githubusercontent.com/61612117/113466957-d8d9b780-947a-11eb-86ae-4067278d2813.png)  
 
 지금까지 한것은 training set에 대해 W 값을 맞춰준 것이다. 그러나 우리가 궁극적으로 원하는 것은 test set에도 작용하도록 하는 것! 이때 training set에 overfitting 된는 것을 막아줄 수 있는게 Regularization이다. 아래와 같이 여러 종류의 Regularization이 있다.   
 
-![image](https://user-images.githubusercontent.com/61612117/113467012-33731380-947b-11eb-96c0-75682a23f05b.png)
+![image](https://user-images.githubusercontent.com/61612117/113467012-33731380-947b-11eb-96c0-75682a23f05b.png)  
 
 **Softmax Classifier**  
-![image](https://user-images.githubusercontent.com/61612117/113467226-b052bd00-947c-11eb-840b-ea8b70fd6959.png)
+![image](https://user-images.githubusercontent.com/61612117/113467226-b052bd00-947c-11eb-840b-ea8b70fd6959.png)  
  
 * Softmax의 작동 원리
    1. 각 클래스마다 score를 구하고 exp를 곱한다. 
@@ -53,28 +53,28 @@ W가 좋은지 안 좋은지 정량화 해주는 것이 바로 **Loss function**
 ❓ 데이터의 score를 조금 바꾼다면?  
 👉 확률로 계산하기 때문에 데이터의 변화에 민감하게 반응한다(SVM과 대비됨)  
 
-![image](https://user-images.githubusercontent.com/61612117/113467430-ec3a5200-947d-11eb-8d00-0aa1f6fc22cf.png)
+![image](https://user-images.githubusercontent.com/61612117/113467430-ec3a5200-947d-11eb-8d00-0aa1f6fc22cf.png)  
 
 **Optimization**  
 1. Random Search  
 말 그대로 랜덤하게 찾는 방법. 별로임! 실제로 쓰지 말아라
 2. Follow the slope : Gradient Descent  
 * Numerical Method  
- ![image](https://user-images.githubusercontent.com/61612117/113467723-d9c11800-947f-11eb-94fe-d327e5ce1e65.png)
+ ![image](https://user-images.githubusercontent.com/61612117/113467723-d9c11800-947f-11eb-94fe-d327e5ce1e65.png)  
 하나하나 차이를 구하는 방법   
 굉장히 비효율적임!  
 * Analytic Gradient
-![image](https://user-images.githubusercontent.com/61612117/113467756-168d0f00-9480-11eb-8f67-6d9bfe571a04.png)
+![image](https://user-images.githubusercontent.com/61612117/113467756-168d0f00-9480-11eb-8f67-6d9bfe571a04.png)  
 미분을 써서 한번에 구하자!  정확하고 빠르지만 에러 나올 가능성 높음.   
 
-![image](https://user-images.githubusercontent.com/61612117/113467776-40decc80-9480-11eb-96b5-25255ab31d5a.png)
+![image](https://user-images.githubusercontent.com/61612117/113467776-40decc80-9480-11eb-96b5-25255ab31d5a.png)  
 
 앞에 -를 붙여서 음의 기울기를 갖는다면 +방향, 양의 기울기를 갖는다면 -방향으로 가도록 한다.   
 올바른 Step size(Learning rate)를 찾는 것이 중요하다. 기울기가 0인 지점에 가장 빠르게 도달할 수 있도록 하는 것이 목표.  
 adam optimizer, rms prop 등 다양한 방법을 배울 것이다!  
 
 **Stochastic Gradient Descent(SGD)**  
- ![image](https://user-images.githubusercontent.com/61612117/113468607-1a219580-9482-11eb-94ee-bac641b18333.png)
+ ![image](https://user-images.githubusercontent.com/61612117/113468607-1a219580-9482-11eb-94ee-bac641b18333.png)  
 
 지금까지는 모든 N을 한번에 계산했다. 
 이는 N이 굉장히 커질 경우 매우 비효율적이고 느린 방식이다. W가 한번 업데이트 되려면 처음부터 끝까지 계산해야하기 때문이다.  
